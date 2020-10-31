@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    </head>
+<body style="background-color: black; color: white";>
+
+<audio id="myAudio1">
+  <source  src="Geeta Govindam.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="myAudio2">
+      <source  src="Darbar.mp3" type="audio/mpeg">
+  </audio>
+<p id="songname" style="margin-left: 20px;"></p>
+<button onclick="playbefore()" type="button" style="margin-left: 10px;"><i class='fas fa-fast-backward'></i></button>
+<button onclick="playAudio()" type="button"><i class='fas fa-play'></i></button> 
+<button onclick="playnxt()" type="button"><i class='fas fa-fast-forward'></i></button>
+<button  type="n" id='stopButton' style="margin-left: 43px;"><i class='fas fa-pause'></i></button> 
+<p>1.Geeta Govindam song</p>
+<p>2.Darbar song</p>
+<p>3.Karabu song</p>
+<p>4.Memories</p>
+<p>5.Ramulo Ramula</p>
+<script>
+    
+var x = document.getElementById(`myAudio1`); 
+
+function playAudio() { 
+  x.play(); 
+  document.getElementById('songname').innerHTML="Geeta Govindam song";
+} 
+
+function playnxt(){
+    var x = document.getElementById(`myAudio2`);
+    x.play();
+    document.getElementById('songname').innerHTML="Darbar song";
+}
+function playbefore(){
+    var x = document.getElementById(`myAudio1`);
+    x.play();
+    document.getElementById('songname').innerHTML="Geeta Govindam song";
+}
+document.getElementById('stopButton').onclick = function() {
+  var sounds = document.getElementsByTagName('audio');
+  for(i=0; i<sounds.length; i++) sounds[i].pause();
+};
+    
+</script>
+
+</body>
+</html>
